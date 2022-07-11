@@ -17,8 +17,16 @@ const app = express();
 app.use(express.json({limit: '2mb'}));
 app.use(express.urlencoded({ limit: '2mb', extended: false }));
 
+
+// Development routes only
+if (process.env.NODE_ENV === 'development') {
+    app.use('/api/jobs', require('./routes/developRoutes'));
+}
+
+
+
 // Production \ Development routes 
-app.use('/api/oews', require('./routes/oewsRoutes'));
+app.use('/api/jobs', require('./routes/jobRoutes'));
 
 
 // Serve frontend
