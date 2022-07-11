@@ -1,0 +1,116 @@
+.sidebar {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    justify-content: flex-start;
+    height: -webkit-fill-available;
+    align-items: center;
+    width: 100px;
+    background-color: var(--color-main);
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-shadow: var(--box-shadow);
+    gap: 40px;
+}
+
+.sidebar .logo {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid var(--color-tertiary);
+}
+
+.sidebar .logo svg {
+    width: 50px;
+    height: 50px;
+}
+
+.sidebar .sidebar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    fill: var(--text-dark);
+    font-size: 14px;
+    opacity: 0.3;
+    transition-duration: var(--transition-duration);
+    cursor: pointer;
+    padding: 20px 0;
+}
+
+.sidebar-item:hover {
+    opacity: 1;
+}
+.sidebar .sidebar-item.active {
+    opacity: 1;
+    color: var(--text-dark);
+    fill: var(--text-dark);
+}
+
+.sidebar .sidebar-item svg {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 8px;
+}
+
+.sidebar .footer {
+    padding: 1rem 8px 0 8px;
+}
+
+.sidebar .footer a {
+    font-size: 10px;
+    padding-top: 2px;
+    padding-bottom: 8px;
+    transition-duration: var(--transition-duration);
+}
+
+.sidebar .footer a:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 769px) { 
+    .sidebar {
+        padding: 8px 12px;
+        left: auto;
+        top: auto;
+        right: auto;
+        justify-content: space-around;
+        bottom: 0;
+        flex-direction: row;
+        height: auto;
+        width: 100vw;
+        width: -webkit-fill-available;
+    }
+
+    .sidebar .footer,
+    .sidebar .logo {
+        display: none;
+    }
+
+    .sidebar-top {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-evenly;
+    }
+
+    .sidebar .sidebar-item {
+        flex-grow: 1;
+        padding: 0;
+        font-size: 12px;
+    }
+
+    .sidebar .sidebar-item svg {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 8px;
+    }
+}

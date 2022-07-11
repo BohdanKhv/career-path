@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { NavContainer } from './components';
+import { Sidebar } from './components';
 import {
   Home
 } from './pages';
@@ -21,11 +21,10 @@ const App = () => {
     return (
       <>
         <Router>
-          <NavContainer>
-            <Routes>
-              <Route path='/' element={<Home/>} />
-            </Routes>
-          </NavContainer>
+          <Sidebar/>
+          <Routes>
+            <Route path='/' element={<Home/>} />
+          </Routes>
         </Router>
       </>
     );

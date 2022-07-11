@@ -16,7 +16,7 @@ const Home = () => {
 
     return (
         <>
-            <div className="body-offset-2">
+            <div className="content">
                 <div className="p-3 flex-grow-1 border-bottom mb-3">
                     <div className="pb-3">
                         <div

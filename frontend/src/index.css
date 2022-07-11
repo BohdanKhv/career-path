@@ -16,8 +16,11 @@
 
   --text-dark: #ffffff;
   --text-light: #000000;
+  --box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  --box-shadow-hover: 0 12px 22px rgb(0 0 0 / 32%);
 
-  --sidebar-width: 225px;
+  --sidebar-width: 100px;
+  --sidebar-height: 80px;
   --nav-height: 60px;
   --nav-height-sm: 50px;
 }
@@ -31,7 +34,6 @@
 
   --text-light: #030303;
   --text-dark: #ffffff;
-  --box-shadow: 1px 2px 4px 0 #6e6e6e8c;
 
   --transition-duration: .3s;
 }
@@ -45,7 +47,6 @@
 
   --text-light: #ffffff;
   --text-dark: #2E2E3B;
-  --box-shadow: 1px 2px 4px 0 #0710138c;
 
   --transition-duration: .3s;
 }
@@ -73,12 +74,8 @@ body {
   border: 1px solid var(--color-border);
 }
 
-.body-offset-1 {
-  margin-top: calc(var(--nav-height) + 1px);
-}
-
-.body-offset-2 {
-  margin-top: calc(var(--nav-height) * 2 + 2px);
+.content {
+  padding: 0 16px 0 calc(var(--sidebar-width) + 16px);
 }
 
 .side-bar-width {
@@ -100,23 +97,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  .content {
+    padding: 0 16px calc(var(--sidebar-height) + 16px) 16px;
+  }
+
   .side-bar-width {
-    display: none;
-  }
-
-  .chips.chips-fixed {
     width: 100%;
-    height: var(--nav-height-sm);
-    top: var(--nav-height-sm);
-  }
-
-  .body-offset-1 {
-    margin-top: calc(var(--nav-height-sm) + 1px);
-    margin-bottom: var(--nav-height);
-  }
-  
-  .body-offset-2 {
-    margin-top: calc(var(--nav-height-sm) * 2 + 2px);
-    margin-bottom: var(--nav-height);
   }
 }
