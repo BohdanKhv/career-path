@@ -27,6 +27,8 @@ if (process.env.NODE_ENV === 'development') {
 
 // Production \ Development routes 
 app.use('/api/jobs', require('./routes/jobRoutes'));
+app.use('/api/programs', require('./routes/programRoutes'));
+app.use('/api/universities', require('./routes/universityRoutes'));
 
 
 // Serve frontend
