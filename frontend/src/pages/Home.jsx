@@ -1,28 +1,46 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { VideoItem, VideoLoading } from '../components'
 import { } from '../features/oews/oewsSlice'
+import { Tabs } from '../components'
+import { arrowIcon, gridIcon, homeIcon } from '../assets/img/icons'
 
 
 const Home = () => {
     const dispatch = useDispatch()
+    const [activeTab, setActiveTab] = useState(0)
 
     useEffect(() => {
         window.scrollTo(0, 0)
         document.title = `Pathify - Home`
-        let promise;
-
     }, [])
 
     return (
         <>
             <div className="content">
-                <div className="p-3 flex-grow-1 border-bottom mb-3">
+                <div className="flex-grow-1 border-bottom mb-3">
                     <div className="pb-3">
                         <div
                             className="fs-2 py-3"
                         >
-                            Hi mom
+                            <Tabs
+                                onChange={setActiveTab}
+                                active={activeTab}
+                                items={[
+                                    {
+                                        label: 'Home',
+                                        icon: homeIcon,
+                                    },
+                                    {
+                                        label: 'Grid',
+                                        icon: gridIcon,
+                                    },
+                                    {
+                                        label: 'Arrow',
+                                        icon: arrowIcon,
+                                    },
+                                ]}
+                            />
                         </div>
                     </div>
                 </div>

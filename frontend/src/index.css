@@ -13,6 +13,7 @@
   --color-success: #61D174;
   --color-danger: #E23645;
   --color-warning: #EDC25E;
+  --color-primary: #FF0078;
 
   --text-dark: #ffffff;
   --text-light: #000000;
@@ -29,7 +30,6 @@
   --color-main: #202020;
   --color-secondary: #363636;
   --color-tertiary: #181818;
-  --color-primary: #00b3ff;
   --color-border: #4b4b4b;
 
   --text-light: #030303;
@@ -42,7 +42,6 @@
   --color-main: #ffffff;
   --color-secondary: #f6f7f8;
   --color-tertiary: #fafafa;
-  --color-primary: #00b3ff;
   --color-border: #cccccc;
 
   --text-light: #ffffff;

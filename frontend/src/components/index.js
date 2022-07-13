@@ -5,6 +5,7 @@ import Icon from "./inputs/Icon";
 
 import Sidebar from "./navigation/Sidebar";
 import Header from "./navigation/Header";
+import Tabs from "./navigation/Tabs";
 
 import SearchField from "./common/SearchField";
 import Image from "./common/Image";
@@ -21,6 +22,7 @@ export {
 
     Sidebar,
     Header,
+    Tabs,
 
     SearchField,
     Image,
