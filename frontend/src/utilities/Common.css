@@ -165,3 +165,18 @@
     width: 100%;
     height: 100%;
 }
+
+
+/* Style */
+.box-shadow {
+    box-shadow: var(--box-shadow);
+}
+.box-shadow-sm {
+    box-shadow: var(--box-shadow-sm);
+}
+.filter-shadow {
+    filter: drop-shadow(var(--box-shadow));
+}
+.filter-shadow-sm {
+    filter: drop-shadow(var(--box-shadow-sm));
+}

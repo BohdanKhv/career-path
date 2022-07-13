@@ -4,9 +4,21 @@ import './styles/Tabs.css';
 const Tabs = ({items, active, onChange}) => {
     const activeRef = useRef(null);
     const indicatorRef = useRef(null);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [indicatorWidth, setIndicatorWidth] = useState(0);
     const [indicatorLeft, setIndicatorLeft] = useState(0);
 
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setWindowWidth(window.innerWidth);
+        }, false);
+
+        return () => {
+            window.removeEventListener('resize', () => {
+                setWindowWidth(window.innerWidth);
+            }, false);
+        }
+    }, []);
 
     useEffect(() => {
         const activeTab = activeRef.current;
@@ -17,7 +29,7 @@ const Tabs = ({items, active, onChange}) => {
             setIndicatorWidth(activeTabWidth);
             setIndicatorLeft(activeTabLeft);
         }
-    }, [active]);
+    }, [active, windowWidth]);
 
     return (
         <div className="tabs">
@@ -29,7 +41,7 @@ const Tabs = ({items, active, onChange}) => {
                         onClick={() => onChange(index)}
                         ref={active === index ? activeRef : null}
                     >
-                        {item.icon && <span className="tab-icon">{item.icon}</span>}
+                        {item.icon && <span className="tab-icon">{active === index ? item.fillIcon : item.icon}</span>}
                         <span className="tab-label">{item.label}</span>
                     </div>
                 ))}

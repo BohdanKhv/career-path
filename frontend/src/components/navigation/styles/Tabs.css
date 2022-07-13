@@ -1,12 +1,18 @@
 .tabs {
     position: relative;
     min-width: 0;
+    overflow-x: scroll;
 }
+
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+
 .tabs-container {
     display: flex;
     align-items: center;
     border-bottom: 2px solid var(--color-border);
-    width: fit-content;
+    flex-grow: 1;
 }
 
 .tabs-indicator {
@@ -22,12 +28,13 @@
     align-items: center;
     justify-content: center;
     padding: 12px 16px;
-    opacity: 0.75;
+    opacity: 0.5;
     transition-duration: var(--transition-duration);
     color: var(--text-dark);
     cursor: pointer;
     user-select: none;
-    font-size: 20px;
+    font-size: 16px;
+    flex-grow: 1;
 }
 
 .tab.active {
@@ -44,10 +51,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .tab-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 768px) {
+    .tab {
+        flex-direction: column;
+    }
+
+    .tab-icon {
+        order: 2;
+        margin-right: 0;
+        margin-top: 5px;
+        display: none;
+    }
 }

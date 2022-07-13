@@ -96,3 +96,10 @@ a {
 .text-secondary {
     opacity: 0.65;
 }
+
+.bold {
+    font-weight: 600;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}

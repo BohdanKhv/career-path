@@ -52,8 +52,8 @@
 }
 .sidebar .sidebar-item.active {
     opacity: 1;
-    color: var(--text-dark);
-    fill: var(--text-dark);
+    color: var(--color-primary);
+    fill: var(--color-primary);
 }
 
 .sidebar .sidebar-item svg {
@@ -62,18 +62,18 @@
     margin-bottom: 8px;
 }
 
-.sidebar .footer {
+.sidebar .sidebar-footer {
     padding: 1rem 8px 0 8px;
 }
 
-.sidebar .footer a {
+.sidebar .sidebar-footer a {
     font-size: 10px;
     padding-top: 2px;
     padding-bottom: 8px;
     transition-duration: var(--transition-duration);
 }
 
-.sidebar .footer a:hover {
+.sidebar .sidebar-footer a:hover {
     color: var(--color-primary);
 }
 
@@ -91,7 +91,7 @@
         width: -webkit-fill-available;
     }
 
-    .sidebar .footer,
+    .sidebar .sidebar-footer,
     .sidebar .logo {
         display: none;
     }

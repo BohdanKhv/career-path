@@ -3,7 +3,9 @@ import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Sidebar } from './components';
 import {
-  Home
+  Home,
+  Jobs,
+  Educations
 } from './pages';
 
 
@@ -24,6 +26,8 @@ const App = () => {
           <Sidebar/>
           <Routes>
             <Route path='/' element={<Home/>} />
+            <Route path='/jobs' element={<Jobs/>} />
+            <Route path='/educations' element={<Educations/>} />
           </Routes>
         </Router>
       </>
