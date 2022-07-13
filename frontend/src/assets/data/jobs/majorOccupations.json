@@ -1,0 +1,90 @@
+[
+    {
+        "value": "11-0000",
+        "label": "Management Occupations"
+    },
+    {
+        "value": "13-0000",
+        "label": "Business and Financial Operations Occupations"
+    },
+    {
+        "value": "15-0000",
+        "label": "Computer and Mathematical Occupations"
+    },
+    {
+        "value": "17-0000",
+        "label": "Architecture and Engineering Occupations"
+    },
+    {
+        "value": "19-0000",
+        "label": "Life, Physical, and Social Science Occupations"
+    },
+    {
+        "value": "21-0000",
+        "label": "Community and Social Service Occupations"
+    },
+    {
+        "value": "23-0000",
+        "label": "Legal Occupations"
+    },
+    {
+        "value": "25-0000",
+        "label": "Educational Instruction and Library Occupations"
+    },
+    {
+        "value": "27-0000",
+        "label": "Arts, Design, Entertainment, Sports, and Media Occupations"
+    },
+    {
+        "value": "29-0000",
+        "label": "Healthcare Practitioners and Technical Occupations"
+    },
+    {
+        "value": "31-0000",
+        "label": "Healthcare Support Occupations"
+    },
+    {
+        "value": "33-0000",
+        "label": "Protective Service Occupations"
+    },
+    {
+        "value": "35-0000",
+        "label": "Food Preparation and Serving Related Occupations"
+    },
+    {
+        "value": "37-0000",
+        "label": "Building and Grounds Cleaning and Maintenance Occupations"
+    },
+    {
+        "value": "39-0000",
+        "label": "Personal Care and Service Occupations"
+    },
+    {
+        "value": "41-0000",
+        "label": "Sales and Related Occupations"
+    },
+    {
+        "value": "43-0000",
+        "label": "Office and Administrative Support Occupations"
+    },
+    {
+        "value": "45-0000",
+        "label": "Farming, Fishing, and Forestry Occupations"
+    },
+    {
+        "value": "47-0000",
+        "label": "Construction and Extraction Occupations"
+    },
+    {
+        "value": "49-0000",
+        "label": "Installation, Maintenance, and Repair Occupations"
+    },
+    {
+        "value": "51-0000",
+        "label": "Production Occupations"
+    },
+    {
+        "value": "53-0000",
+        "label": "Transportation and Material Moving Occupations"
+    }
+]

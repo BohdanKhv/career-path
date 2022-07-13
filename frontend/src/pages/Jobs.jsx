@@ -1,32 +1,37 @@
 import { useEffect, useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { Header, Tabs } from "../components"
-import { jabTabs } from "../assets/data/tabs"
+import { useDispatch } from "react-redux"
+import { useSearchParams } from 'react-router-dom'
+import { Header, Tabs, Map } from "../components"
+import { jobTabs } from "../assets/data/tabs"
 
 
 const Jobs = () => {
     const dispatch = useDispatch()
-    const [activeTab, setActiveTab] = useState(0)
+    const [searchParams] = useSearchParams();
+    const [activeTab, setActiveTab] = useState(searchParams.get('tab') ? parseInt(searchParams.get('tab')) : 0);
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        document.title = `Pathify - Home`
+        document.title = `Pathify - Jobs`
     }, [])
 
 
     return (
-        <div className="content">
-            <div className="flex-grow-1 mb-3">
+        <main className="content">
+            <div className="flex-grow-1 mb-3 mx-w-lg mx-auto">
                 <Header label="Jobs" />
                 <div className="content-body">
                     <Tabs
                         onChange={setActiveTab}
                         active={activeTab}
-                        items={jabTabs}
+                        items={jobTabs}
                     />
+                    <div className="results-container">
+                        {activeTab === 2 && <Map />}
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

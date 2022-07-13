@@ -1,0 +1,67 @@
+import Select from 'react-select';
+
+const CustomSelect = ({ className, options, onChange, value, placeholder, isSearchable, isClearable }) => {
+  const customStyles = {
+    option: (provided, state) => ({
+        ...provided,
+        color: state.isSelected ? 'var(--text-light)' : '#var(--text-dark)',
+        transition: 'var(--transition-duration)',
+        padding: 15,
+        background: state.isSelected ? 'var(--text-dark)' : 'var(--text-light)',
+        cursor: 'pointer',
+        '&:hover': {
+            background: 'var(--text-dark)',
+            color: 'var(--text-light)',
+        },
+    }),
+    control: () => ({
+        border: '1px solid var(--color-border)',
+        background: 'var(--color-main)',
+        fontWeight: '400',
+        display: 'flex',
+        height: '35px',
+        borderRadius: 'var(--border-radius)',
+        cursor: 'pointer',
+        transition: 'var(--transition-duration)',
+        width: '100%',
+        minWidth: '110px',
+        fontFamily: 'inherit',
+        '&:hover': {
+          borderColor: 'transparent',
+          boxShadow: 'var(--box-shadow)',
+        },
+        '&:focus': {
+          borderColor: 'transparent',
+          boxShadow: 'var(--box-shadow)',
+        },
+    }),
+    menu: (provided) => ({
+      ...provided,
+      borderRadius: 'var(--border-radius)',
+      overflow: 'hidden',
+      boxShadow: 'var(--box-shadow)',
+    }),
+    singleValue: (provided, state) => {
+        const opacity = state.isDisabled ? 0.5 : 1;
+        const transition = 'opacity 300ms';
+        const color = state.isSelected ? 'var(--text-light)' : '#var(--text-dark)';
+
+        return { ...provided, opacity, transition, color };
+    }
+  }
+
+  return (
+    <Select
+      styles={customStyles}
+      options={options}
+      onChange={onChange}
+      value={value}
+      className={className}
+      placeholder={placeholder}
+      isSearchable={isSearchable}
+      isClearable={isClearable}
+    />
+  )
+}
+
+export default CustomSelect

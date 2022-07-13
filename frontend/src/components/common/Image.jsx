@@ -14,7 +14,7 @@ const Image = ({
 
     return (
         <div
-            className={`image-main bg-secondary${className ? ` ${className}` : ""}`}
+            className={``}
         >
             <img
                 className={`image-main${className ? ` ${className}` : ""}${isImageLoaded ? '' : ' opacity-0'}`}

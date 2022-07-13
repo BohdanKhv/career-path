@@ -6,7 +6,7 @@ import { arrowIcon, gridIcon, homeIcon } from '../assets/img/icons'
 
 const Home = () => {
     const dispatch = useDispatch()
-    const [activeTab, setActiveTab] = useState(0)
+    const [activeTab, setActiveTab] = useState(0);
 
     useEffect(() => {
         window.scrollTo(0, 0)

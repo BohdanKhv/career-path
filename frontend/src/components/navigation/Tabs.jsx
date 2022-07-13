@@ -1,7 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles/Tabs.css';
 
 const Tabs = ({items, active, onChange}) => {
+    const navigate = useNavigate();
     const activeRef = useRef(null);
     const indicatorRef = useRef(null);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -38,7 +40,14 @@ const Tabs = ({items, active, onChange}) => {
                     <div
                         key={index}
                         className={`tab${active === index ? ' active': ''}`}
-                        onClick={() => onChange(index)}
+                        onClick={
+                            () => { 
+                                onChange(index);
+                                navigate({
+                                    search: `?tab=${index}`
+                                });
+                            }
+                        }
                         ref={active === index ? activeRef : null}
                     >
                         {item.icon && <span className="tab-icon">{active === index ? item.fillIcon : item.icon}</span>}

@@ -5,7 +5,7 @@ const API_URL = '/api/profiles/';
 
 
 // Get profile
-const getOews = async (data) => {
+const getJobs = async (data) => {
     const res = await axios.get(`${API_URL}${data}`);
 
     return res.data;
@@ -13,7 +13,7 @@ const getOews = async (data) => {
 
 
 const profileService = {
-    getOews,
+    getJobs,
 }
 
 export default profileService;

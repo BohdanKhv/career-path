@@ -1,6 +1,6 @@
 .image-main {
-    width: 100%;
-    min-width: 100%;
+    width: -webkit-fill-available;
+    /* min-width: max-content; */
     display: flex;
     min-height: inherit;
     height: 100%;
@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-color: var(--color-secondary);
     cursor: pointer;
-    object-fit: cover;
+    /* object-fit: cover; */
+    object-fit: contain;
     object-position: center;
 }

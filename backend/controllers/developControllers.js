@@ -1,4 +1,6 @@
 const University = require('../models/universityModel');
+const Job = require('../models/jobModel');
+const Program = require('../models/programModel');
 const cheerio = require('cheerio');
 const axios = require('axios');
 
@@ -63,6 +65,49 @@ const downloadLogo = async (req, res) => {
     }
 }
 
+
+const distinct = async (req, res) => {
+    try {
+        const data = [];
+
+        // !Start Distinct major occupations
+            // const ids = [];
+            // const jobs = await Job.find({level: 'major'});
+
+            // for(let i = 0; i < jobs.length; i++) {
+            //     if(!ids.includes(jobs[i].occCode)) {
+            //         ids.push(jobs[i].occCode);
+            //         data.push({
+            //             occCode: jobs[i].occCode,
+            //             occTitle: jobs[i].occTitle,
+            //         });
+            //     }
+            // }
+        // !End Distinct major occupations
+
+        // !Start Distinct detailed occupations
+            const ids = [];
+            const jobs = await Job.find({level: 'detailed'});
+
+            for(let i = 0; i < jobs.length; i++) {
+                if(!ids.includes(jobs[i].occCode)) {
+                    ids.push(jobs[i].occCode);
+                    data.push({
+                        occCode: jobs[i].occCode,
+                        occTitle: jobs[i].occTitle,
+                    });
+                }
+            }
+        // !End Distinct detailed occupations
+
+        return res.status(200).json(data);
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send('Server Error');
+    }
+}
+
 module.exports = {
-    downloadLogo
+    downloadLogo,
+    distinct
 }

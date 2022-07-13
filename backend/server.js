@@ -21,6 +21,7 @@ app.use(express.urlencoded({ limit: '2mb', extended: false }));
 // Development routes only
 if (process.env.NODE_ENV === 'development') {
     app.use('/api/jobs', require('./routes/developRoutes'));
+    app.use('/api/develop', require('./routes/developRoutes'));
 }
 
 
