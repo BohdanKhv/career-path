@@ -37,6 +37,7 @@
     right: 5vw;
     top: 5vh;
     position: absolute;
+    fill: var(--text-dark);
 }
 
 .image-btn {

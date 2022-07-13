@@ -12,8 +12,12 @@ const Jobs = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        document.title = `Pathify - Jobs`
+        document.title = `Pathify | Jobs`
     }, [])
+
+    useEffect(() => {
+        document.title = `Pathify | Jobs - ${jobTabs[activeTab].label}`
+    }, [activeTab])
 
 
     return (

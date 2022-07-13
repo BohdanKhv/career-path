@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 import './styles/Image.css'
 
 const Image = ({
@@ -14,7 +14,12 @@ const Image = ({
 
     return (
         <div
-            className={``}
+            style={{
+                background: isImageLoaded ? 'none' : 'var(--color-secondary',
+                width: isImageLoaded ? 'auto' : '100%',
+                height: isImageLoaded ? 'auto' : '100%',
+                minHeight: isImageLoaded ? 'auto' : '100%',
+            }}
         >
             <img
                 className={`image-main${className ? ` ${className}` : ""}${isImageLoaded ? '' : ' opacity-0'}`}

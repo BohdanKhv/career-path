@@ -1,13 +1,13 @@
 import Select from 'react-select';
 
-const CustomSelect = ({ className, options, onChange, value, placeholder, isSearchable, isClearable }) => {
+const CustomSelect = ({ className, options, onChange, value, placeholder, isSearchable, isClearable, isLoading }) => {
   const customStyles = {
     option: (provided, state) => ({
         ...provided,
-        color: state.isSelected ? 'var(--text-light)' : '#var(--text-dark)',
+        color: state.isSelected ? 'var(--text-light)' : 'var(--text-dark)',
         transition: 'var(--transition-duration)',
         padding: 15,
-        background: state.isSelected ? 'var(--text-dark)' : 'var(--text-light)',
+        background: state.isSelected ? 'var(--text-dark)' : 'var(--color-main)',
         cursor: 'pointer',
         '&:hover': {
             background: 'var(--text-dark)',
@@ -41,6 +41,11 @@ const CustomSelect = ({ className, options, onChange, value, placeholder, isSear
       overflow: 'hidden',
       boxShadow: 'var(--box-shadow)',
     }),
+    menuList: (provided) => ({
+      ...provided,
+      borderRadius: 'var(--border-radius)',
+      background: 'var(--color-main)',
+    }),
     singleValue: (provided, state) => {
         const opacity = state.isDisabled ? 0.5 : 1;
         const transition = 'opacity 300ms';
@@ -60,6 +65,7 @@ const CustomSelect = ({ className, options, onChange, value, placeholder, isSear
       placeholder={placeholder}
       isSearchable={isSearchable}
       isClearable={isClearable}
+      isLoading={isLoading}
     />
   )
 }
