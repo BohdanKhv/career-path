@@ -25,7 +25,12 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    border-bottom: 1px solid var(--color-tertiary);
+    border-bottom: 1px solid var(--color-border);
+    transition-duration: var(--transition-duration);
+}
+
+.sidebar .logo:hover {
+    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.15));
 }
 
 .sidebar .logo svg {
@@ -43,17 +48,45 @@
     font-size: 14px;
     opacity: 0.3;
     transition-duration: var(--transition-duration);
+    border-radius: var(--border-radius);
+    height: 60px;
     cursor: pointer;
-    padding: 20px 0;
+    padding: 12px 0;
+    font-weight: 500;
+    margin: 0 8px;
+    position: relative;
+    z-index: 2;
+}
+.sidebar-top-links {
+    margin-top: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.sidebar-indicator {
+    background-color: var(--color-border);
+    position: absolute;
+    transition-duration: var(--transition-duration);
+    background-color: var(--color-secondary);
+    height: 60px;
+    width: 84px;
+    border-radius: var(--border-radius);
+    padding: 12px 0;
+    margin: 0 8px;
+    bottom: 0px;
+    z-index: 1;
 }
 
 .sidebar-item:hover {
     opacity: 1;
+    background-color: var(--color-secondary);
 }
 .sidebar .sidebar-item.active {
     opacity: 1;
-    color: var(--color-primary);
-    fill: var(--color-primary);
+    background-color: var(--color-secondary);
 }
 
 .sidebar .sidebar-item svg {
@@ -79,7 +112,7 @@
 
 @media (max-width: 769px) { 
     .sidebar {
-        padding: 8px 12px;
+        padding: 0;
         left: auto;
         top: auto;
         right: auto;
@@ -89,6 +122,17 @@
         height: auto;
         width: 100vw;
         width: -webkit-fill-available;
+    }
+    .sidebar-top-links {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        gap: 8px;
+        padding: 8px 12px;
+        margin: 0;
+    }
+    .sidebar-indicator {
+        display: none;
     }
 
     .sidebar .sidebar-footer,
@@ -104,8 +148,10 @@
 
     .sidebar .sidebar-item {
         flex-grow: 1;
-        padding: 0;
+        padding: 8px 12px;
+        margin: 0;
         font-size: 12px;
+        height: 40px;
     }
 
     .sidebar .sidebar-item svg {

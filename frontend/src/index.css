@@ -13,7 +13,7 @@
   --color-success: #61D174;
   --color-danger: #E23645;
   --color-warning: #EDC25E;
-  --color-primary: #FF0078;
+  --color-info: #acceff;
 
   --text-dark: #ffffff;
   --text-light: #000000;
@@ -31,6 +31,7 @@
   --color-secondary: #363636;
   --color-tertiary: #181818;
   --color-border: #4b4b4b;
+  --color-primary: #4791e6;
 
   --text-light: #030303;
   --text-dark: #ffffff;
@@ -43,6 +44,7 @@
   --color-secondary: #f6f7f8;
   --color-tertiary: #fafafa;
   --color-border: #cccccc;
+  --color-primary: #4791e6;
 
   --text-light: #ffffff;
   --text-dark: #2E2E3B;
@@ -80,7 +82,7 @@ body {
   padding: 0 16px 0 calc(var(--sidebar-width) + 16px);
 }
 .content-body {
-  padding: 16px;
+  padding: 16px 0;
   background-color: var(--color-main);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -105,6 +107,16 @@ body {
   height: 100%;
   object-position: center;
   object-fit: contain;
+}
+
+table {
+  /* table-layout: fixed; */
+  /* border-radius: var(--border-radius); */
+  overflow: hidden;
+}
+table td,
+table th {
+  padding: 8px 16px;
 }
 
 @keyframes spinner {

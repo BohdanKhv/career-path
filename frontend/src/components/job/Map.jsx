@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CustomSelect, DisplayImage } from '../';
+import { CustomSelect, Image } from '../';
 import majorOccupation from '../../assets/data/jobs/majorOccupations.json'
 import detailedOccupation from '../../assets/data/jobs/detailedOccupations.json'
 import maps from '../../assets/data/jobs/maps.json'
@@ -12,13 +12,13 @@ const Map = () => {
 
     return (
         <section>
-            <div className="border-bottom py-3 flex gap-3 flex-min-wrap">
+            <div className="p-3 flex gap-3 flex-min-wrap">
                 <CustomSelect
                     options={majorOccupation}
                     onChange={(e) => setMajor(e)}
                     value={major}
                     className="flex-grow-1"
-                    placeholder="Select a major occupation"
+                    placeholder="Major occupation"
                 />
                 {major && (
                     <CustomSelect
@@ -26,7 +26,7 @@ const Map = () => {
                         onChange={(e) => setDetailed(e)}
                         value={detailed}
                         className="flex-grow-1"
-                        placeholder="Select a detailed occupation"
+                        placeholder="Detailed occupation"
                     />
                 )}
                 {major && detailed && (
@@ -35,13 +35,13 @@ const Map = () => {
                         onChange={(e) => setMapType(e)}
                         value={mapType}
                         className="flex-grow-1"
-                        placeholder="Select measurement"
+                        placeholder="Measurement"
                     />
                 )}
             </div>
             {major && detailed && mapType && (
                 <div className="map py-3">
-                    <DisplayImage
+                    <Image
                         image={`https://www.bls.gov/oes/current/${mapType.value}${detailed.value.replace('-', '')}.png`}
                         alt={detailed.value}
                         className="map-img border-radius"

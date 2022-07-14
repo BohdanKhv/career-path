@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useSearchParams } from 'react-router-dom'
-import { Header, Tabs, Map } from "../components"
+import { Header, Tabs, Map, JobsData } from "../components"
 import { jobTabs } from "../assets/data/tabs"
 
 
@@ -31,7 +31,8 @@ const Jobs = () => {
                         items={jobTabs}
                     />
                     <div className="results-container">
-                        {activeTab === 2 && <Map />}
+                        {activeTab === 0 && <JobsData />}
+                        {activeTab === 1 && <Map />}
                     </div>
                 </div>
             </div>

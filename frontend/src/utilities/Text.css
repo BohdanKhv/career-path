@@ -55,11 +55,11 @@
 
 .text-hover {
     cursor: pointer;
-    opacity: 0.65;
     transition-duration: var(--transition-duration);
+    border-radius: var(--border-radius);
 }
 .text-hover:hover {
-    opacity: 1;
+    background-color: var(--color-secondary);
 }
 a {
     color: var(--text-dark);
@@ -105,4 +105,30 @@ a {
 }
 .text-uppercase {
     text-transform: uppercase;
+}
+
+.white-space-nowrap {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .fs-1 {
+        font-size: 3rem!important;
+        font-weight: 600;
+    }
+    .fs-2 {
+        font-size: 1.25rem!important;
+    }
+    .fs-3 {
+        font-size: 1.05rem!important;
+    }
+    .fs-4 {
+        font-size: 0.85rem!important;
+    }
+    .fs-5 {
+        font-size: 0.65rem!important;
+    }
+    .fs-6 {
+        font-size: 0.5rem!important;
+    }
 }

@@ -8,6 +8,9 @@ const initialState = {
     isUpdating: false,
     isError: false,
     isSuccess: false,
+    offset: 0,
+    limit: 30,
+    hasMore: true,
     msg: '',
 };
 
@@ -17,7 +20,8 @@ export const getJobs = createAsyncThunk(
     'job/getJobs',
     async (data, thunkAPI) => {
         try {
-            return await jobService.getJobs(data);
+            const { offset } = thunkAPI.getState().job;
+            return await jobService.getJobs({...data, offset});
         } catch (error) {
             const message =
                 (error.response &&
@@ -37,25 +41,31 @@ const jobsSlice = createSlice({
     reducers: {
         // ResetJobs state
         resetJobs: (state) => {
-            state.jobs = null;
+            state.jobs = [];
             state.isError = false;
             state.isSuccess = false;
             state.isLoading = false;
             state.isUpdating = false;
+            state.offset = 0;
+            state.limit = 30;
+            state.hasMore = true;
             state.msg = '';
         },
     },
     extraReducers: (builder) => {
         // get jobs
         builder.addCase(getJobs.pending, (state, action) => {
-            state.isFollowLoading = true;
+            state.isLoading = true;
         });
         builder.addCase(getJobs.fulfilled, (state, action) => {
-            state.isFollowLoading = false;
-            state.follows = [...state.follows, ...action.payload];
+            state.isLoading = false;
+            state.jobs = [...state.jobs, ...action.payload];
+            state.offset = state.offset + state.limit;
+            state.hasMore = action.payload.length === state.limit;
         });
         builder.addCase(getJobs.rejected, (state, action) => {
-            state.isFollowLoading = false;
+            state.isLoading = false;
+            state.isError = true;
             state.msg = action.payload;
         });
     }

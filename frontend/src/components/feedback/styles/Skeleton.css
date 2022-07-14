@@ -23,6 +23,7 @@
 
 .skeleton.skeleton-animation-wave::before {
     animation: 1.6s linear 0.5s infinite normal none running skeleton-animation-wave;
+    animation-delay: calc(var(--order) * 150ms);
     background: linear-gradient(90deg, transparent, var(--color-border), transparent);
     content: "";
     position: absolute;

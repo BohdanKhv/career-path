@@ -3,6 +3,8 @@
     min-width: 0;
     overflow-x: scroll;
     margin-bottom: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .tabs::-webkit-scrollbar {
@@ -12,15 +14,17 @@
 .tabs-container {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--color-border);
     flex-grow: 1;
+    gap: 12px;
 }
 
 .tabs-indicator {
-    background-color: var(--color-primary);
-    height: 1px;
     position: absolute;
     transition-duration: var(--transition-duration);
+    background-color: var(--color-secondary);
+    height: 43px;
+    height: -webkit-fill-available;
+    border-radius: var(--border-radius);
     bottom: 0px;
 }
 
@@ -32,21 +36,27 @@
     opacity: 0.5;
     transition-duration: var(--transition-duration);
     color: var(--text-dark);
+    fill: var(--text-dark);
     cursor: pointer;
     user-select: none;
     font-size: 16px;
     flex-grow: 1;
     text-align: center;
+    font-weight: 500;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
 }
 
 .tab.active {
     opacity: 1;
-    color: var(--color-primary);
-    fill: var(--color-primary);
 }
 
 .tab:hover {
     opacity: 1;
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius);
 }
 
 .tab-icon {
@@ -63,13 +73,13 @@
 
 @media (max-width: 768px) {
     .tab {
-        flex-direction: column;
+        /* flex-direction: column; */
     }
 
     .tab-icon {
-        order: 2;
+        /* order: 2;
         margin-right: 0;
         margin-top: 5px;
-        display: none;
+        display: none; */
     }
 }

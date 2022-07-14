@@ -86,21 +86,23 @@ const distinct = async (req, res) => {
         // !End Distinct major occupations
 
         // !Start Distinct detailed occupations
-            const ids = [];
-            const jobs = await Job.find({level: 'detailed'});
+            // const ids = [];
+            // const jobs = await Job.find({level: 'detailed'});
 
-            for(let i = 0; i < jobs.length; i++) {
-                if(!ids.includes(jobs[i].occCode)) {
-                    ids.push(jobs[i].occCode);
-                    data.push({
-                        occCode: jobs[i].occCode,
-                        occTitle: jobs[i].occTitle,
-                    });
-                }
-            }
+            // for(let i = 0; i < jobs.length; i++) {
+            //     if(!ids.includes(jobs[i].occCode)) {
+            //         ids.push(jobs[i].occCode);
+            //         data.push({
+            //             occCode: jobs[i].occCode,
+            //             occTitle: jobs[i].occTitle,
+            //         });
+            //     }
+            // }
         // !End Distinct detailed occupations
+        
+        const newData = await Job.distinct('state');
 
-        return res.status(200).json(data);
+        return res.status(200).json(newData);
     } catch (err) {
         console.log(err);
         return res.status(500).send('Server Error');

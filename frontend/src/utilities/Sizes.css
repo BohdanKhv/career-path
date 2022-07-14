@@ -368,3 +368,20 @@
 .w-min-0 {
     min-width: 0;
 }
+
+/* Svg */
+.icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-dark);
+}
+.icon-sm svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-dark);
+}
+.icon-lg svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--text-dark);
+}

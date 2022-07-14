@@ -180,3 +180,19 @@
 .filter-shadow-sm {
     filter: drop-shadow(var(--box-shadow-sm));
 }
+
+.animation-duration {
+    animation-duration: var(--transition-duration);
+}
+.rotate-180 {
+    transform: rotate(180deg);
+}
+.pointer {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .d-none-sm {
+        display: none;
+    }
+}

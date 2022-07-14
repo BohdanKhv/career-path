@@ -1,23 +1,29 @@
 const Job = require('../models/jobModel');
-const University = require('../models/universityModel');
-const cheerio = require('cheerio');
-const axios = require('axios');
-const fs = require('fs');
 
 
-// @route   GET api/jobs/2021?area=str&o_group
+// @route   GET api/jobs?area=str&state=str&occCode=str&sort=int&&offset=int
 // @desc    Get jobs
 // @access  Public
 const getJobs = async (req, res) => {
     try {
-        // const { area, o_group } = req.query;
+        const { area, state, occCode, sort, offset } = req.query;
+        const jobs = await Job.find({
+            areaTitle: area || { $exists: true },
+            state: state || { $exists: true },
+            occCode: occCode || { $exists: true },
+            'wage.annually': { $exists: true },
+        })
+        .sort({
+            'wage.annually': sort == 1 ? 1 : -1,
+        })
+        .skip(offset || 0)
+        .limit(30);
 
-        // const jobs = await Jobs.find({ area, o_group });
-
-        // return res.status(200).json(Jobs);
-    } catch (err) {
-        console.error(err.message);
-        return res.status(500).send('Server Error');
+        return res.status(200).json(jobs);
+    } catch (error) {
+        return res.status(500).json({
+            msg: error.message,
+        });
     }
 }
 

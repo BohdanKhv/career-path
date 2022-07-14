@@ -4,14 +4,13 @@ const CustomSelect = ({ className, options, onChange, value, placeholder, isSear
   const customStyles = {
     option: (provided, state) => ({
         ...provided,
-        color: state.isSelected ? 'var(--text-light)' : 'var(--text-dark)',
+        color: 'var(--text-dark)',
         transition: 'var(--transition-duration)',
         padding: 15,
-        background: state.isSelected ? 'var(--text-dark)' : 'var(--color-main)',
+        background: state.isSelected ? 'var(--color-secondary)' : 'var(--color-main)',
         cursor: 'pointer',
         '&:hover': {
-            background: 'var(--text-dark)',
-            color: 'var(--text-light)',
+          background: 'var(--color-secondary)',
         },
     }),
     control: () => ({
@@ -28,11 +27,8 @@ const CustomSelect = ({ className, options, onChange, value, placeholder, isSear
         fontFamily: 'inherit',
         '&:hover': {
           borderColor: 'transparent',
-          boxShadow: 'var(--box-shadow)',
-        },
-        '&:focus': {
-          borderColor: 'transparent',
-          boxShadow: 'var(--box-shadow)',
+          background: 'var(--color-secondary)',
+          // boxShadow: 'var(--box-shadow)',
         },
     }),
     menu: (provided) => ({

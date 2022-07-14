@@ -16,6 +16,9 @@ import DisplayImage from "./common/DisplayImage";
 import Skeleton from "./feedback/Skeleton";
 
 import Map from "./job/Map";
+import JobsData from "./job/JobsData";
+import JobItem from "./job/JobItem";
+import JobLoading from "./job/JobLoading";
 
 
 export {
@@ -37,4 +40,7 @@ export {
     Skeleton,
 
     Map,
+    JobsData,
+    JobItem,
+    JobLoading,
 }

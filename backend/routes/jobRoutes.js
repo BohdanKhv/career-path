@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'development') {
     router.route('/test').get(test);
 }
 
-router.route('/2021').get(getJobs);
+router.route('/').get(getJobs);
 
 
 module.exports = router;

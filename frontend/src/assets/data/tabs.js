@@ -1,14 +1,10 @@
-import { mapFillIcon, mapIcon, listIcon, topIcon, topFillIcon, compareIcon } from '../img/icons'
+import { mapFillIcon, mapIcon, dataIcon, dataFillIcon, compareIcon, compareFillIcon } from '../img/icons'
 
 const jobTabs = [
     {
         label: "All Data",
-        icon: listIcon,
-        fillIcon: listIcon
-    }, {
-        label: "Top Paid",
-        icon: topIcon,
-        fillIcon: topFillIcon
+        icon: dataIcon,
+        fillIcon: dataFillIcon
     }, {
         label: "Map",
         icon: mapIcon,
@@ -16,7 +12,7 @@ const jobTabs = [
     }, {
         label: "Compare",
         icon: compareIcon,
-        fillIcon: compareIcon
+        fillIcon: compareFillIcon
     }, 
 ]
 
