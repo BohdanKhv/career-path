@@ -56,10 +56,9 @@
 .text-hover {
     cursor: pointer;
     transition-duration: var(--transition-duration);
-    border-radius: var(--border-radius);
 }
 .text-hover:hover {
-    background-color: var(--color-secondary);
+    opacity: 0.8;
 }
 a {
     color: var(--text-dark);

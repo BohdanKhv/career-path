@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useSearchParams } from 'react-router-dom'
-import { Header, Tabs, Map, JobsData } from "../components"
+import { Header, Tabs, Map, JobsData, Button } from "../components"
 import { jobTabs } from "../assets/data/tabs"
 
 

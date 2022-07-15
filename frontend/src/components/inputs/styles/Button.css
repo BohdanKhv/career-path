@@ -25,8 +25,8 @@
     transition: var(--transition-duration);
     border: 1px solid var(--color-primary);
     background-color: var(--color-primary);
-    color: #000000;
-    fill: #000000;
+    color: #ffffff;
+    fill: #ffffff;
     transition: 0.3s;
 }
 
@@ -299,10 +299,9 @@
 }
 
 .btn:hover {
-    opacity: 0.75;
-    box-shadow: var(--box-shadow);
+    box-shadow: 2px 2px 2px var(--text-dark);
 }
 
 .btn:active {
-    opacity: 1;
+    box-shadow: none;
 }

@@ -57,17 +57,17 @@ const JobsData = () => {
             <table className="w-100" cellSpacing="0" cellPadding="0">
                 <thead>
                     <tr>
-                        <th className="text-start border-bottom d-none-sm">
+                        <th className="text-start d-none-sm">
                             <div className="bold fs-3">
                                 #
                             </div>
                         </th>
-                        <th className="text-start border-bottom">
+                        <th className="text-start">
                             <div className="bold fs-3">
                                 Title
                             </div>
                         </th>
-                        <th className="text-end border-bottom pointer"
+                        <th className="text-end pointer text-hover"
                             onClick={() => setSort(sort === 0 ? 1 : 0)}
                             title={sort === 0 ? 'Sort by annual salary ascending' : 'Sort by annual salary descending'}
                         >

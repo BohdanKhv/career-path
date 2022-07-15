@@ -9,8 +9,9 @@ const getJobs = async (req, res) => {
         const { area, state, occCode, sort, offset } = req.query;
         const jobs = await Job.find({
             areaTitle: area || { $exists: true },
-            state: state || { $exists: true },
+            state: state || "US",
             occCode: occCode || { $exists: true },
+            naics: 'cross-industry',
             'wage.annually': { $exists: true },
         })
         .sort({
