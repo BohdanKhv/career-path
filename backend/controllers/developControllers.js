@@ -99,10 +99,25 @@ const distinct = async (req, res) => {
             //     }
             // }
         // !End Distinct detailed occupations
-        
-        const newData = await Job.distinct('state');
 
-        return res.status(200).json(newData);
+        // !Start Distinct detailed occupations
+            const ids = [];
+            const jobs = await Job.find({level: 'minor'});
+
+            for(let i = 0; i < jobs.length; i++) {
+                if(!ids.includes(jobs[i].occCode)) {
+                    ids.push(jobs[i].occCode);
+                    data.push({
+                        value: jobs[i].occCode,
+                        label: jobs[i].occTitle,
+                    });
+                }
+            }
+        // !End Distinct detailed occupations
+        
+        // const newData = await Job.distinct('state');
+
+        return res.status(200).json(data);
     } catch (err) {
         console.log(err);
         return res.status(500).send('Server Error');

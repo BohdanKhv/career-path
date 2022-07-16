@@ -30,7 +30,7 @@ const Jobs = () => {
                         active={activeTab}
                         items={jobTabs}
                     />
-                    <div className="results-container">
+                    <div className="results-container border-top pt-3">
                         {activeTab === 0 && <JobsData />}
                         {activeTab === 1 && <Map />}
                     </div>

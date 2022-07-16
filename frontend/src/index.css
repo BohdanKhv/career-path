@@ -109,25 +109,14 @@ body {
   object-fit: contain;
 }
 
-table {
-  /* table-layout: fixed; */
-  /* border-radius: var(--border-radius); */
-  overflow: hidden;
-}
 table thead {
   text-transform: uppercase;
-  background-color: var(--color-primary);
-  color: #ffffff;
-  /* box-shadow: var(--box-shadow);
-  position: relative; */
-}
-table thead svg {
-  fill: #ffffff!important;
+  background-color: var(--color-secondary);
 }
 table td,
 table th {
+  white-space: nowrap;
   padding: 8px 16px;
-  word-break: break-word;
 }
 
 @keyframes spinner {

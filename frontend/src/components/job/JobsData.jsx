@@ -3,11 +3,12 @@ import { useSelector, useDispatch } from "react-redux"
 import { useSearchParams } from "react-router-dom"
 import { getJobs, resetJobs } from "../../features/job/jobSlice"
 import { JobItem, JobLoading } from "../"
-import { arrowUpIcon } from "../../assets/img/icons"
+import { arrowUpIcon, jobIcon, dollarIcon, plusIcon, peopleIcon, bugIcon } from "../../assets/img/icons"
 
 
 const JobsData = () => {
     const dispatch = useDispatch()
+    const tableRef = useRef(null)
     const [searchParams] = useSearchParams();
     const [filterState, setFilterState] = useState(searchParams.get('state') ? searchParams.get('state') : '')
     const [filterArea, setFilterArea] = useState(searchParams.get('area') ? searchParams.get('area') : '')
@@ -53,30 +54,44 @@ const JobsData = () => {
 
 
     return (
-        <section>
+        <section className="overflow-x-scroll">
             <table className="w-100" cellSpacing="0" cellPadding="0">
                 <thead>
                     <tr>
-                        <th className="text-start d-none-sm">
-                            <div className="bold fs-3">
-                                #
+                        <th className="text-start">
+                            <div className="bold fs-4 flex align-center">
+                                <i className="icon-sm me-2">{jobIcon}</i>
+                                Title
                             </div>
                         </th>
-                        <th className="text-start">
-                            <div className="bold fs-3">
-                                Title
+                        <th className="text-center">
+                            <div className="bold fs-4 flex align-center justify-center">
+                                <i className="icon-sm me-2">{peopleIcon}</i>
+                                Employed
+                            </div>
+                        </th>
+                        <th className="text-center">
+                            <div className="bold fs-4 flex align-center justify-center">
+                                <i className="icon-sm me-2">{bugIcon}</i>
+                                RSE
                             </div>
                         </th>
                         <th className="text-end pointer text-hover"
                             onClick={() => setSort(sort === 0 ? 1 : 0)}
                             title={sort === 0 ? 'Sort by annual salary ascending' : 'Sort by annual salary descending'}
                         >
-                            <div className="flex flex-col">
-                                <div className="bold fs-4 flex align-center justify-end">
-                                    Average Salary <i className={`animation-duration icon-sm ms-2${sort === 1 ? " rotate-180": "" }`}>{arrowUpIcon}</i>
+                            <div className="flex align-center justify-end">
+                                <div className="flex flex-col">
+                                    <div className="bold fs-4 flex align-center justify-end">
+                                        Annually
+                                    </div>
+                                    <div className="fs-5 weight-normal mt-2 white-space-nowrap">
+                                        Hourly
+                                    </div>
                                 </div>
-                                <div className="fs-4 weight-normal mt-2 white-space-nowrap">
-                                    Hourly | RSE | Employed
+                                <div className="flex flex-col">
+                                    <i className={`animation-duration icon-sm ms-2${sort === 1 ? " rotate-180": "" }`}>{arrowUpIcon}</i>
+                                    <i className="icon-sm">{dollarIcon}</i>
                                 </div>
                             </div>
                         </th>

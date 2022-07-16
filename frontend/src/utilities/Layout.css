@@ -221,3 +221,18 @@
 .right-0 {
     right: 0;
 }
+
+
+/* Overflow */
+.overflow-x-scroll {
+    overflow-x: scroll;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+.overflow-y-hidden {
+    overflow-y: hidden;
+}

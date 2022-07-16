@@ -1,6 +1,8 @@
 import { Bar } from 'react-chartjs-2';
 import { numberFormatter } from '../../assets/utils/helpers'
 import { locationIcon } from '../../assets/img/icons';
+import minorOccupations from '../../assets/data/jobs/minorOccupations.json';
+import majorOccupations from '../../assets/data/jobs/majorOccupations.json';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -69,91 +71,91 @@ const JobDetail = ({ item }) => {
 
     return (
         <tr>
-            <td colSpan="3" className="border-bottom p-0 bg-secondary">
-                <div className="flex flex-col text-center">
+            <td colSpan="4" className="border-bottom p-0 bg-secondary">
+                <div className="flex flex-col">
                     <div className="flex flex-col p-4 flex-grow-1">
-                        <span className="fs-3 bold">
-                            {item.occTitle}
-                        </span>
-                        <span className="fs-4 pt-1 bold" title="OCC code">
+                        <div className="fs-4 bold">
+                            {item.areaTitle}
+                        </div>
+                        <div className="fs-5 bold">
                             {item.occCode}
-                        </span>
-                        <span className="fs-5 pt-1">
-                            {item.level}
-                        </span>
-                        <div className="fs-5 pt-3 flex align-center justify-center">
-                            <i className="icon-sm me-1">{locationIcon}</i> {item.areaTitle}
+                        </div>
+                        <div className="fs-5 pt-2">
+                            {majorOccupations.filter(i => i.value.slice(0, 2) === item.occCode.slice(0, 2))[0].label}
+                        </div>
+                        <div className="fs-5 pt-1">
+                            {minorOccupations.filter(i => i.value.slice(0, 4) === item.occCode.slice(0, 4))[0].label}
                         </div>
                     </div>
-                    {hData.length >= 3 ? (
-                    <div className="px-3">
-                        <Bar
-                            data={{
-                                labels: hData.map((item) => item.label),
-                                datasets: [
-                                    {
-                                        label: 'Hourly Wage',
-                                        backgroundColor: '#00bcd4',
-                                        hoverBackgroundColor: "#00bcb4",
-                                        data: hData.map((item) => item.value),
-                                    }
-                                ]
-                            }}
-                            options={{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    legend: {
-                                        position: 'bottom',
-                                        display: false,
+                    <div className="text-center flex justify-between">
+                        {hData.length >= 3 ? (
+                        <div className="p-3 border-top">
+                            <Bar
+                                data={{
+                                    labels: hData.map((item) => item.label),
+                                    datasets: [
+                                        {
+                                            label: 'Hourly Wage',
+                                            backgroundColor: '#00bcd4',
+                                            hoverBackgroundColor: "#00bcb4",
+                                            data: hData.map((item) => item.value),
+                                        }
+                                    ]
+                                }}
+                                options={{
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    plugins: {
+                                        legend: {
+                                            position: 'bottom',
+                                            display: false,
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Hourly Wage',
+                                        },
                                     },
-                                    title: {
-                                        display: true,
-                                        text: 'Hourly Wage',
+                                }}
+                                height={200}
+                            />
+                        </div>
+                        ) : ( null )}
+                        {/* // ) : <p className="fs-4 px-4">
+                        //         Not enough data to display hourly wage
+                        //     </p>} */}
+                        {aData.length >= 3 ? (
+                        <div className="p-3 border-top">
+                            <Bar
+                                data={{
+                                    labels: aData.map((item) => item.label),
+                                    datasets: [
+                                        {
+                                            label: 'Annual Wage',
+                                            backgroundColor: '#00bcd4',
+                                            hoverBackgroundColor: "#00bcb4",
+                                            data: aData.map((item) => item.value),
+                                        }
+                                    ]
+                                }}
+                                options={{
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    plugins: {
+                                        legend: {
+                                            position: 'bottom',
+                                            display: false,
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Annual Wage',
+                                        },
                                     },
-                                },
-                            }}
-                            height={200}
-                        />
+                                }}
+                                height={200}
+                            />
+                        </div>
+                        ) : ( null )}
                     </div>
-                    ) : <p className="fs-4 px-4">
-                            Not enough data to display hourly wage
-                        </p>}
-                    {aData.length >= 3 ? (
-                    <div className="p-3">
-                        <Bar
-                            data={{
-                                labels: aData.map((item) => item.label),
-                                datasets: [
-                                    {
-                                        label: 'Annual Wage',
-                                        backgroundColor: '#00bcd4',
-                                        hoverBackgroundColor: "#00bcb4",
-                                        data: aData.map((item) => item.value),
-                                    }
-                                ]
-                            }}
-                            options={{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    legend: {
-                                        position: 'bottom',
-                                        display: false,
-                                    },
-                                    title: {
-                                        display: true,
-                                        text: 'Annual Wage',
-                                    },
-                                },
-                            }}
-                            height={200}
-                        />
-                    </div>
-                    ): <p className="fs-4 p-4">
-                        Not enough data to display annual wage
-                        </p>
-                    }
                 </div>
             </td>
         </tr>

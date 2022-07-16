@@ -1,0 +1,378 @@
+[
+    {
+        "value": "11-1000",
+        "label": "Top Executives"
+    },
+    {
+        "value": "11-2000",
+        "label": "Advertising, Marketing, Promotions, Public Relations, and Sales Managers"
+    },
+    {
+        "value": "11-3000",
+        "label": "Operations Specialties Managers"
+    },
+    {
+        "value": "11-9000",
+        "label": "Other Management Occupations"
+    },
+    {
+        "value": "13-1000",
+        "label": "Business Operations Specialists"
+    },
+    {
+        "value": "13-2000",
+        "label": "Financial Specialists"
+    },
+    {
+        "value": "15-1200",
+        "label": "Computer Occupations"
+    },
+    {
+        "value": "15-2000",
+        "label": "Mathematical Science Occupations"
+    },
+    {
+        "value": "17-1000",
+        "label": "Architects, Surveyors, and Cartographers"
+    },
+    {
+        "value": "17-2000",
+        "label": "Engineers"
+    },
+    {
+        "value": "17-3000",
+        "label": "Drafters, Engineering Technicians, and Mapping Technicians"
+    },
+    {
+        "value": "19-1000",
+        "label": "Life Scientists"
+    },
+    {
+        "value": "19-2000",
+        "label": "Physical Scientists"
+    },
+    {
+        "value": "19-3000",
+        "label": "Social Scientists and Related Workers"
+    },
+    {
+        "value": "19-4000",
+        "label": "Life, Physical, and Social Science Technicians"
+    },
+    {
+        "value": "19-5000",
+        "label": "Occupational Health and Safety Specialists and Technicians"
+    },
+    {
+        "value": "21-1000",
+        "label": "Counselors, Social Workers, and Other Community and Social Service Specialists"
+    },
+    {
+        "value": "21-2000",
+        "label": "Religious Workers"
+    },
+    {
+        "value": "23-1000",
+        "label": "Lawyers, Judges, and Related Workers"
+    },
+    {
+        "value": "23-2000",
+        "label": "Legal Support Workers"
+    },
+    {
+        "value": "25-1000",
+        "label": "Postsecondary Teachers"
+    },
+    {
+        "value": "25-2000",
+        "label": "Preschool, Elementary, Middle, Secondary, and Special Education Teachers"
+    },
+    {
+        "value": "25-3000",
+        "label": "Other Teachers and Instructors"
+    },
+    {
+        "value": "25-4000",
+        "label": "Librarians, Curators, and Archivists"
+    },
+    {
+        "value": "25-9000",
+        "label": "Other Educational Instruction and Library Occupations"
+    },
+    {
+        "value": "27-1000",
+        "label": "Art and Design Workers"
+    },
+    {
+        "value": "27-2000",
+        "label": "Entertainers and Performers, Sports and Related Workers"
+    },
+    {
+        "value": "27-3000",
+        "label": "Media and Communication Workers"
+    },
+    {
+        "value": "27-4000",
+        "label": "Media and Communication Equipment Workers"
+    },
+    {
+        "value": "29-1000",
+        "label": "Healthcare Diagnosing or Treating Practitioners"
+    },
+    {
+        "value": "29-2000",
+        "label": "Health Technologists and Technicians"
+    },
+    {
+        "value": "29-9000",
+        "label": "Other Healthcare Practitioners and Technical Occupations"
+    },
+    {
+        "value": "31-1100",
+        "label": "Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides"
+    },
+    {
+        "value": "31-2000",
+        "label": "Occupational Therapy and Physical Therapist Assistants and Aides"
+    },
+    {
+        "value": "31-9000",
+        "label": "Other Healthcare Support Occupations"
+    },
+    {
+        "value": "33-1000",
+        "label": "Supervisors of Protective Service Workers"
+    },
+    {
+        "value": "33-2000",
+        "label": "Firefighting and Prevention Workers"
+    },
+    {
+        "value": "33-3000",
+        "label": "Law Enforcement Workers"
+    },
+    {
+        "value": "33-9000",
+        "label": "Other Protective Service Workers"
+    },
+    {
+        "value": "35-1000",
+        "label": "Supervisors of Food Preparation and Serving Workers"
+    },
+    {
+        "value": "35-2000",
+        "label": "Cooks and Food Preparation Workers"
+    },
+    {
+        "value": "35-3000",
+        "label": "Food and Beverage Serving Workers"
+    },
+    {
+        "value": "35-9000",
+        "label": "Other Food Preparation and Serving Related Workers"
+    },
+    {
+        "value": "37-1000",
+        "label": "Supervisors of Building and Grounds Cleaning and Maintenance Workers"
+    },
+    {
+        "value": "37-2000",
+        "label": "Building Cleaning and Pest Control Workers"
+    },
+    {
+        "value": "37-3000",
+        "label": "Grounds Maintenance Workers"
+    },
+    {
+        "value": "39-1000",
+        "label": "Supervisors of Personal Care and Service Workers"
+    },
+    {
+        "value": "39-2000",
+        "label": "Animal Care and Service Workers"
+    },
+    {
+        "value": "39-3000",
+        "label": "Entertainment Attendants and Related Workers"
+    },
+    {
+        "value": "39-4000",
+        "label": "Funeral Service Workers"
+    },
+    {
+        "value": "39-5000",
+        "label": "Personal Appearance Workers"
+    },
+    {
+        "value": "39-6000",
+        "label": "Baggage Porters, Bellhops, and Concierges"
+    },
+    {
+        "value": "39-7000",
+        "label": "Tour and Travel Guides"
+    },
+    {
+        "value": "39-9000",
+        "label": "Other Personal Care and Service Workers"
+    },
+    {
+        "value": "41-1000",
+        "label": "Supervisors of Sales Workers"
+    },
+    {
+        "value": "41-2000",
+        "label": "Retail Sales Workers"
+    },
+    {
+        "value": "41-3000",
+        "label": "Sales Representatives, Services"
+    },
+    {
+        "value": "41-4000",
+        "label": "Sales Representatives, Wholesale and Manufacturing"
+    },
+    {
+        "value": "41-9000",
+        "label": "Other Sales and Related Workers"
+    },
+    {
+        "value": "43-1000",
+        "label": "Supervisors of Office and Administrative Support Workers"
+    },
+    {
+        "value": "43-2000",
+        "label": "Communications Equipment Operators"
+    },
+    {
+        "value": "43-3000",
+        "label": "Financial Clerks"
+    },
+    {
+        "value": "43-4000",
+        "label": "Information and Record Clerks"
+    },
+    {
+        "value": "43-5000",
+        "label": "Material Recording, Scheduling, Dispatching, and Distributing Workers"
+    },
+    {
+        "value": "43-6000",
+        "label": "Secretaries and Administrative Assistants"
+    },
+    {
+        "value": "43-9000",
+        "label": "Other Office and Administrative Support Workers"
+    },
+    {
+        "value": "45-1000",
+        "label": "Supervisors of Farming, Fishing, and Forestry Workers"
+    },
+    {
+        "value": "45-2000",
+        "label": "Agricultural Workers"
+    },
+    {
+        "value": "45-4000",
+        "label": "Forest, Conservation, and Logging Workers"
+    },
+    {
+        "value": "47-1000",
+        "label": "Supervisors of Construction and Extraction Workers"
+    },
+    {
+        "value": "47-2000",
+        "label": "Construction Trades Workers"
+    },
+    {
+        "value": "47-3000",
+        "label": "Helpers, Construction Trades"
+    },
+    {
+        "value": "47-4000",
+        "label": "Other Construction and Related Workers"
+    },
+    {
+        "value": "47-5000",
+        "label": "Extraction Workers"
+    },
+    {
+        "value": "49-1000",
+        "label": "Supervisors of Installation, Maintenance, and Repair Workers"
+    },
+    {
+        "value": "49-2000",
+        "label": "Electrical and Electronic Equipment Mechanics, Installers, and Repairers"
+    },
+    {
+        "value": "49-3000",
+        "label": "Vehicle and Mobile Equipment Mechanics, Installers, and Repairers"
+    },
+    {
+        "value": "49-9000",
+        "label": "Other Installation, Maintenance, and Repair Occupations"
+    },
+    {
+        "value": "51-1000",
+        "label": "Supervisors of Production Workers"
+    },
+    {
+        "value": "51-2000",
+        "label": "Assemblers and Fabricators"
+    },
+    {
+        "value": "51-3000",
+        "label": "Food Processing Workers"
+    },
+    {
+        "value": "51-4000",
+        "label": "Metal Workers and Plastic Workers"
+    },
+    {
+        "value": "51-5100",
+        "label": "Printing Workers"
+    },
+    {
+        "value": "51-6000",
+        "label": "Textile, Apparel, and Furnishings Workers"
+    },
+    {
+        "value": "51-7000",
+        "label": "Woodworkers"
+    },
+    {
+        "value": "51-8000",
+        "label": "Plant and System Operators"
+    },
+    {
+        "value": "51-9000",
+        "label": "Other Production Occupations"
+    },
+    {
+        "value": "53-1000",
+        "label": "Supervisors of Transportation and Material Moving Workers"
+    },
+    {
+        "value": "53-2000",
+        "label": "Air Transportation Workers"
+    },
+    {
+        "value": "53-3000",
+        "label": "Motor Vehicle Operators"
+    },
+    {
+        "value": "53-4000",
+        "label": "Rail Transportation Workers"
+    },
+    {
+        "value": "53-5000",
+        "label": "Water Transportation Workers"
+    },
+    {
+        "value": "53-6000",
+        "label": "Other Transportation Workers"
+    },
+    {
+        "value": "53-7000",
+        "label": "Material Moving Workers"
+    }
+]

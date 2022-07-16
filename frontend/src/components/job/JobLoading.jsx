@@ -8,7 +8,13 @@ const JobLoading = ({index}) => {
           ['--order']: index,
         }}
       >
-        <td className="py-1 border-bottom" colSpan='3' >
+        <td className="px-1 border-bottom" colSpan="2" >
+          <Skeleton animation="wave" className="w-100" height={45} />
+        </td>
+        <td className="px-1 border-bottom" colSpan="1" >
+          <Skeleton animation="wave" className="w-100" height={45} />
+        </td>
+        <td className="px-1 border-bottom" colSpan="1" >
           <Skeleton animation="wave" className="w-100" height={45} />
         </td>
       </tr>
