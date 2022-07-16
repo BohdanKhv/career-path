@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { numberFormatter } from '../../assets/utils/helpers'
+import { JobDetail } from '../';
 
 
 const JobItem = ({item, index}) => {
@@ -34,18 +35,7 @@ const JobItem = ({item, index}) => {
             </td>
         </tr>
         {showDetails &&
-            <tr>
-                <td colSpan="3" className="border-bottom p-0 bg-secondary">
-                    <div className="flex flex-col justify-center align-center py-4">
-                        <span className="fs-4 bold">
-                            {item.occTitle}
-                        </span>
-                        <span className="fs-4 mt-2">
-                            {item.wage.hourly ? `$${item.wage.hourly} | ` : ''}{item.wage.rse ? `${item.wage.rse}%` : ''}{item.totalEmp ? " | "+numberFormatter(item.totalEmp) : ''}
-                        </span>
-                    </div>
-                </td>
-            </tr>
+            <JobDetail item={item} />
         }
         </>
     )

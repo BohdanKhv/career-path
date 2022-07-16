@@ -19,6 +19,7 @@ import Map from "./job/Map";
 import JobsData from "./job/JobsData";
 import JobItem from "./job/JobItem";
 import JobLoading from "./job/JobLoading";
+import JobDetail from "./job/JobDetail";
 
 
 export {
@@ -43,4 +44,5 @@ export {
     JobsData,
     JobItem,
     JobLoading,
+    JobDetail
 }

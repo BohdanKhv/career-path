@@ -118,6 +118,8 @@ table thead {
   text-transform: uppercase;
   background-color: var(--color-primary);
   color: #ffffff;
+  /* box-shadow: var(--box-shadow);
+  position: relative; */
 }
 table thead svg {
   fill: #ffffff!important;
@@ -125,6 +127,7 @@ table thead svg {
 table td,
 table th {
   padding: 8px 16px;
+  word-break: break-word;
 }
 
 @keyframes spinner {

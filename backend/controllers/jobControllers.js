@@ -10,6 +10,7 @@ const getJobs = async (req, res) => {
         const jobs = await Job.find({
             areaTitle: area || { $exists: true },
             state: state || "US",
+            // level: 'major',
             occCode: occCode || { $exists: true },
             naics: 'cross-industry',
             'wage.annually': { $exists: true },
