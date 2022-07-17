@@ -20,6 +20,7 @@ import JobsData from "./job/JobsData";
 import JobItem from "./job/JobItem";
 import JobLoading from "./job/JobLoading";
 import JobDetail from "./job/JobDetail";
+import JobFilter from "./job/JobFilter";
 
 
 export {
@@ -44,5 +45,6 @@ export {
     JobsData,
     JobItem,
     JobLoading,
-    JobDetail
+    JobDetail,
+    JobFilter
 }

@@ -11,7 +11,10 @@ const getJobs = async (req, res) => {
             areaTitle: area || { $exists: true },
             state: state || "US",
             // level: 'major',
-            occCode: occCode || { $exists: true },
+            occCode:
+                occCode ? 
+                    { $regex: `^${occCode}`, $options: 'i' } :
+                { $exists: true },
             naics: 'cross-industry',
             'wage.annually': { $exists: true },
         })

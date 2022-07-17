@@ -2,13 +2,12 @@ import { useEffect, useState, useRef, useCallback } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useSearchParams } from "react-router-dom"
 import { getJobs, resetJobs } from "../../features/job/jobSlice"
-import { JobItem, JobLoading } from "../"
+import { JobItem, JobLoading, JobFilter } from "../"
 import { arrowUpIcon, jobIcon, dollarIcon, plusIcon, peopleIcon, bugIcon } from "../../assets/img/icons"
 
 
 const JobsData = () => {
     const dispatch = useDispatch()
-    const tableRef = useRef(null)
     const [searchParams] = useSearchParams();
     const [filterState, setFilterState] = useState(searchParams.get('state') ? searchParams.get('state') : '')
     const [filterArea, setFilterArea] = useState(searchParams.get('area') ? searchParams.get('area') : '')
@@ -20,9 +19,9 @@ const JobsData = () => {
 
     const getData = () => {
         dispatch(getJobs({
-            state: filterState,
-            area: filterArea,
-            occCode: filterOccCode,
+            state: filterState && filterState.value ? filterState.value : '',
+            area: filterArea && filterArea.value ? filterArea.label : '',
+            occCode: filterOccCode && filterOccCode.value ? filterOccCode.value.slice(0,3) : '',
             sort: sort,
         }))
     }
@@ -50,11 +49,19 @@ const JobsData = () => {
             promise && promise.abort();
             dispatch(resetJobs());
         }
-    }, [sort])
+    }, [sort, filterState, filterArea, filterOccCode])
 
 
     return (
         <section className="overflow-x-scroll">
+            <JobFilter 
+                setFilterState={setFilterState}
+                filterState={filterState}
+                setFilterOccCode={setFilterOccCode}
+                filterOccCode={filterOccCode}
+                filterArea={filterArea}
+                setFilterArea={setFilterArea}
+            /> 
             <table className="w-100" cellSpacing="0" cellPadding="0">
                 <thead>
                     <tr>
@@ -103,7 +110,7 @@ const JobsData = () => {
                     ))
                     }
                     <tr ref={lastElementRef}/>
-                    {Array.from(Array(10).keys()).map((i) => (
+                    {isLoading && Array.from(Array(10).keys()).map((i) => (
                         <JobLoading key={`loading-${i}`} index={i} />
                     ))}
                 </tbody>

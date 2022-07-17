@@ -87,9 +87,9 @@ const JobDetail = ({ item }) => {
                             {minorOccupations.filter(i => i.value.slice(0, 4) === item.occCode.slice(0, 4))[0].label}
                         </div>
                     </div>
-                    <div className="text-center flex justify-between">
+                    <div className="text-center flex border-top">
                         {hData.length >= 3 ? (
-                        <div className="p-3 border-top">
+                        <div className="p-3">
                             <Bar
                                 data={{
                                     labels: hData.map((item) => item.label),
@@ -120,11 +120,13 @@ const JobDetail = ({ item }) => {
                             />
                         </div>
                         ) : ( null )}
-                        {/* // ) : <p className="fs-4 px-4">
-                        //         Not enough data to display hourly wage
-                        //     </p>} */}
+                        {hData.length < 3 && aData.length < 3 && (
+                        <p className="fs-4 p-4">
+                            Not enough data to display wage data graph.
+                        </p>
+                        )}
                         {aData.length >= 3 ? (
-                        <div className="p-3 border-top">
+                        <div className="p-3">
                             <Bar
                                 data={{
                                     labels: aData.map((item) => item.label),
