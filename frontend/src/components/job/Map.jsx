@@ -11,8 +11,8 @@ const Map = () => {
     const [mapType, setMapType] = useState(null);
 
     return (
-        <section>
-            <div className="p-3 flex gap-3 flex-min-wrap">
+        <section className="p-3">
+            <div className="flex gap-3 flex-min-wrap">
                 <CustomSelect
                     options={majorOccupation}
                     onChange={(e) => setMajor(e)}

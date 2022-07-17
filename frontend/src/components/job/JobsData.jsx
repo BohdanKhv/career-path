@@ -12,6 +12,7 @@ const JobsData = () => {
     const [filterState, setFilterState] = useState(searchParams.get('state') ? searchParams.get('state') : '')
     const [filterArea, setFilterArea] = useState(searchParams.get('area') ? searchParams.get('area') : '')
     const [filterOccCode, setFilterOccCode] = useState(searchParams.get('occCode') ? searchParams.get('occCode') : '')
+    const [filterDetailed, setFilterDetailed] = useState(searchParams.get('detailed') ? searchParams.get('detailed') : '')
     const [sort, setSort] = useState(searchParams.get('sort') ? searchParams.get('sort') : 0)
     
     const { jobs, isLoading, hasMore } = useSelector(state => state.job)
@@ -21,7 +22,8 @@ const JobsData = () => {
         dispatch(getJobs({
             state: filterState && filterState.value ? filterState.value : '',
             area: filterArea && filterArea.value ? filterArea.label : '',
-            occCode: filterOccCode && filterOccCode.value ? filterOccCode.value.slice(0,3) : '',
+            occCode: filterOccCode && filterOccCode.value ? 
+                filterDetailed && filterDetailed.value ? filterDetailed.value : filterOccCode.value.slice(0,3) : '',
             sort: sort,
         }))
     }
@@ -49,19 +51,22 @@ const JobsData = () => {
             promise && promise.abort();
             dispatch(resetJobs());
         }
-    }, [sort, filterState, filterArea, filterOccCode])
+    }, [sort, filterState, filterArea, filterOccCode, filterDetailed])
 
 
     return (
+        <>
+        <JobFilter 
+            setFilterState={setFilterState}
+            filterState={filterState}
+            setFilterOccCode={setFilterOccCode}
+            filterOccCode={filterOccCode}
+            filterArea={filterArea}
+            setFilterArea={setFilterArea}
+            filterDetailed={filterDetailed}
+            setFilterDetailed={setFilterDetailed}
+        /> 
         <section className="overflow-x-scroll">
-            <JobFilter 
-                setFilterState={setFilterState}
-                filterState={filterState}
-                setFilterOccCode={setFilterOccCode}
-                filterOccCode={filterOccCode}
-                filterArea={filterArea}
-                setFilterArea={setFilterArea}
-            /> 
             <table className="w-100" cellSpacing="0" cellPadding="0">
                 <thead>
                     <tr>
@@ -116,6 +121,7 @@ const JobsData = () => {
                 </tbody>
             </table>
         </section>
+        </>
     )
 }
 

@@ -1,8 +1,18 @@
 import majorOccupation from '../../assets/data/jobs/majorOccupations.json'
+import detailedOccupation from '../../assets/data/jobs/detailedOccupations.json'
 import states from '../../assets/data/jobs/states.json'
 import { CustomSelect } from '../';
 
-const JobFilter = ({setFilterState, filterState, setFilterOccCode, filterOccCode, filterArea, setFilterArea}) => {
+const JobFilter = ({
+    setFilterState,
+    filterState,
+    setFilterOccCode,
+    filterOccCode,
+    filterArea,
+    setFilterArea,
+    filterDetailed,
+    setFilterDetailed,
+}) => {
     return (
         <div className="pb-3 px-3 flex gap-3 flex-wrap">
             <CustomSelect
@@ -23,12 +33,22 @@ const JobFilter = ({setFilterState, filterState, setFilterOccCode, filterOccCode
             />
             <CustomSelect
                 options={majorOccupation}
-                onChange={(e) => setFilterOccCode(e)}
+                onChange={(e) => {setFilterOccCode(e); setFilterDetailed(null)}}
                 value={filterOccCode}
                 className="flex-grow-1"
                 placeholder="Occupation"
                 isClearable
             />
+            {filterOccCode && (
+                <CustomSelect
+                options={detailedOccupation}
+                onChange={(e) => setFilterDetailed(e)}
+                value={filterDetailed}
+                className="flex-grow-1"
+                placeholder="Detailed Occupation"
+                isClearable
+            />
+            )}
         </div>
     )
 }
